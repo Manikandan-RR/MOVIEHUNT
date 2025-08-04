@@ -1,4 +1,4 @@
-
+import { Link, NavLink } from "react-router-dom"
 
 export const Header = () => {
 
@@ -16,11 +16,11 @@ export const Header = () => {
                     </button>
 
                     <div className="collapse navbar-collapse" id="menu">
-                        <ul className="navbar-nav me-auto">
-                            <li className="navbar-item"><a href="" className="nav-link">Home</a></li>
-                            <li className="navbar-item"><a href="" className="nav-link">Top Rated</a></li>
-                            <li className="navbar-item"><a href="" className="nav-link">Popular</a></li>
-                            <li className="navbar-item"><a href="" className="nav-link">Upcoming</a></li>
+                        <ul className="navbar-nav me-auto mb-2 mb-md-0">
+                            <li className="navbar-item"><NavLink to="/" className="nav-link">Home</NavLink></li>
+                            <li className="navbar-item"><NavLink to="movies/top" className="nav-link">Top Rated</NavLink></li>
+                            <li className="navbar-item"><NavLink to="movies/popular" className="nav-link">Popular</NavLink></li>
+                            <li className="navbar-item"><NavLink to="movies/upcoming" className="nav-link">Upcoming</NavLink></li>
                         </ul>
                         <form action="#">
                             <input type="search" placeholder="Search" className="form-control form-control-sm " />

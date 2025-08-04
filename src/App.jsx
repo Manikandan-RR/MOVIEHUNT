@@ -10,7 +10,8 @@ export default function app() {
     <>
       <Header />
       <AllRoutes />
-      
+      <Footer />
+
 
 
 
