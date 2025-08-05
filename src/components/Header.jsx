@@ -40,7 +40,7 @@ export const Header = () => {
                             <li className="navbar-item"><NavLink to="movies/upcoming" className="nav-link">Upcoming</NavLink></li>
                         </ul>
                         <form onSubmit={handleSearch}>
-                            <input type="search" placeholder="Search" className="form-control form-control-sm" name="search" />
+                            <input type="search" placeholder="Search" className="form-control form-control-sm" name="search" style={{ fontSize: "16px" }} />
                         </form>
                     </div>
                 </div>
