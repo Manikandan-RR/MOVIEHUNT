@@ -1,6 +1,17 @@
-import { Link, NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 
 export const Header = () => {
+
+    const navigator = useNavigate();
+
+    const handleSearch = (e) => {
+        e.preventDefault()
+        const queryTerm = e.target.search.value;
+        e.target.reset();
+        return navigator(`/search?q=${queryTerm}`);
+
+    }
+
 
     return (
 
@@ -22,15 +33,10 @@ export const Header = () => {
                             <li className="navbar-item"><NavLink to="movies/popular" className="nav-link">Popular</NavLink></li>
                             <li className="navbar-item"><NavLink to="movies/upcoming" className="nav-link">Upcoming</NavLink></li>
                         </ul>
-                        <form action="#">
-                            <input type="search" placeholder="Search" className="form-control form-control-sm " />
+                        <form onSubmit={handleSearch}>
+                            <input type="search" placeholder="Search" className="form-control form-control-sm" name="search" />
                         </form>
                     </div>
-
-
-
-
-
                 </div>
 
             </nav>

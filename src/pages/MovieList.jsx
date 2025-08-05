@@ -1,19 +1,25 @@
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom";
 import { Card } from "../components";
-import { useFetch } from "../hooks/useFetch";
+import { useFetch } from "../custom_hooks/useFetch";
 
 
 
 export const MovieList = ({ title, apiPath }) => {
-    console.log(apiPath)
 
-    const { data: movies } = useFetch(apiPath);
+
+    const { tmdbdata: movies } = useFetch({ apiPath });
+
+    // just renaming the name tmdbData to movies
+
+    // Equivalent to abobe code (This extracts the tmdbdata property from the returned object and renames it to movies.)
+    // const result = useFetch({ apiPath });
+    // const movies = result.tmdbdata;
 
     useEffect(() => {
         document.title = title;
 
-    });
+    }, [title]);
 
     const navigator = useNavigate();
 
@@ -37,7 +43,7 @@ export const MovieList = ({ title, apiPath }) => {
                 <h5 className="text-danger py-2 border-bottom">{title}</h5>
 
                 <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 py-2">
-                    {movies.map((movie) => {
+                    {movies?.map((movie) => {
                         return <Card key={movie.id} movie={movie} />
                     })}
 
