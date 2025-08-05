@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom"
+import { Link, NavLink, useNavigate } from "react-router-dom"
 
 export const Header = () => {
 
@@ -6,7 +6,13 @@ export const Header = () => {
 
     const handleSearch = (e) => {
         e.preventDefault()
-        const queryTerm = e.target.search.value;
+        const queryTerm = e.target.search.value.trim();
+
+        if (!queryTerm) {
+            alert("Please enter a movie name to search.");
+            return;
+        }
+
         e.target.reset();
         return navigator(`/search?q=${queryTerm}`);
 
@@ -18,9 +24,9 @@ export const Header = () => {
         <>
             <nav className="navbar navbar-expand-md fixed-top bg-primary navbar-dark">
                 <div className="container-fluid">
-                    <a href="#" className="navbar-brand">
+                    <Link to="/" className="navbar-brand">
                         <i className="bi bi-film"></i> MovieHunt
-                    </a>
+                    </Link>
 
                     <button type="button" className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
                         <span className="navbar-toggler-icon"></span>

@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom"
-import { MovieDetails, MovieList, Search } from "../pages"
+import { MovieDetails, MovieList, PageNotFound, Search } from "../pages"
 
 
 
@@ -16,7 +16,9 @@ const AllRoutes = () => {
 
                 <Route path="movie/:id" element={<MovieDetails />} />
 
-                <Route path="search" element={<Search apiPath="search/movie"/>} />
+                <Route path="search" element={<Search apiPath="search/movie" />} />
+
+                <Route path="*" element={<PageNotFound title="Page Not Found" />} />
 
 
             </Routes>
