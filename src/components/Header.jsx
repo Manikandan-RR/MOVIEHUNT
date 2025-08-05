@@ -25,7 +25,7 @@ export const Header = () => {
             <nav className="navbar navbar-expand-md fixed-top bg-primary navbar-dark">
                 <div className="container-fluid">
                     <Link to="/" className="navbar-brand">
-                        <i className="bi bi-film"></i> MovieHunt
+                        <i className="bi bi-film"></i> Movieinfos
                     </Link>
 
                     <button type="button" className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
