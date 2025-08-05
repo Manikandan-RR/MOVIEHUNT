@@ -41,6 +41,17 @@ export const Header = () => {
                         </ul>
                         <form onSubmit={handleSearch}>
                             <input type="search" placeholder="Search" className="form-control form-control-sm" name="search" style={{ fontSize: "16px" }} />
+                            {/* <input
+                                type="search"
+                                placeholder="Search"
+                                name="search"
+                                className="form-control"
+                                style={{
+                                    fontSize: "16px",         // prevents mobile zoom
+                                    transform: "scale(0.875)", // visually smaller (87.5%)
+                                    transformOrigin: "top left"
+                                }}
+                            /> */}
                         </form>
                     </div>
                 </div>
